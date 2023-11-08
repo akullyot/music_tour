@@ -36,7 +36,6 @@ bands.get('/:name', async (req,res) => {
                     where: {name: { [Op.like] : `%${req.query.event ? req.query.event : ''}%`}}
                 }},
             ]
-            
         });
         res.status(200).json(foundBand)
     } catch (err) {
