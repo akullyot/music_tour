@@ -22,10 +22,10 @@ bands.get('/', async (req, res) => {
 })
 
 //find a specific band
-bands.get('/:id', async (req,res) => {
+bands.get('/:name', async (req,res) => {
     try {
         const foundBand = await Band.findOne({
-            where: {band_id: req.params.id}
+            where: {name: req.name}
         });
         res.status(200).json(foundBand)
     } catch (err) {
